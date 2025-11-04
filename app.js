@@ -80,7 +80,9 @@ const sessionOptions = {
 };
 
 
-
+app.get("/", (req, res) => {
+res.send("I am Root");
+});
 
 
 
