@@ -80,9 +80,9 @@ const sessionOptions = {
 };
 
 
-app.get("/", (req, res) => {
-res.send("I am Root");
-});
+// app.get("/", (req, res) => {
+// res.send("I am Root");
+// });
 
 
 
@@ -118,9 +118,9 @@ app.use("/", userRouter);
 
 
 
-// app.all("*",(req, res, next)=> {
-//     next(new ExpressError(404, "page not found"));
-// });
+app.all("/",(req, res, next)=> {
+    next(new ExpressError(404, "page not found"));
+});
 
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something went wrong" } = err;
